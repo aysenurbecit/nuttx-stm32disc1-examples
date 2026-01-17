@@ -80,7 +80,7 @@ make distclean
 make menuconfig
 ```
 
-**Menuconfig'de şu ayarları yapılmalı:**
+**Menuconfig ayarları:**
 
 1. **Device Drivers** → **IO Expander/GPIO Support** → **[*] GPIO driver**
 2. **Application Configuration** → **Examples** → **[*] LED Control example**
@@ -94,7 +94,7 @@ make clean
 make -j$(nproc)
 ```
 
-### Adım 6: Flash
+### 6) Flash
 
 ```bash
 sudo st-flash write nuttx.bin 0x8000000
@@ -120,32 +120,4 @@ Reset tuşuna basına ardından gelen terminalde uygulamayı çalıştırın.
 
 ```bash
 nsh> led_control
-```
-
-### Output
-
-```
-╔════════════════════════════════════════╗
-║  STM32F4Discovery LED Kontrol (GPIO)  ║
-╚════════════════════════════════════════╝
-
-GPIO cihazları başarıyla açıldı.
-LED kontrolü başlatılıyor...
-Çıkmak için Ctrl+C tuşlayın
-
-Yeşil (PD12) LED yanıyor...
-Turuncu (PD13) LED yanıyor...
-Kırmızı (PD14) LED yanıyor...
-Mavi (PD15) LED yanıyor...
-```
-
-### Derleme hatası
-
-```bash
-# Temiz derleme
-cd ~/path/to/nuttx
-make distclean
-./tools/configure.sh stm32f4discovery:nsh
-# Konfigürasyonu tekrarla
-make -j$(nproc)
 ```
