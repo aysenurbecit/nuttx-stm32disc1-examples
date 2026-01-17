@@ -121,8 +121,8 @@ int main(int argc, FAR char *argv[])
   
   printf("\n");
   printf("╔════════════════════════════════════════╗\n");
-  printf("║  STM32F4Discovery LED Kontrol (GPIO)  ║\n");
-  printf("║         NuttX RTOS Kullanımı          ║\n");
+  printf("║  STM32F4Discovery LED Kontrol (GPIO)   ║\n");
+  printf("║         NuttX RTOS Kullanımı           ║\n");
   printf("╚════════════════════════════════════════╝\n");
   printf("\n");
   
@@ -153,10 +153,6 @@ int main(int argc, FAR char *argv[])
     {
       fprintf(stderr, "\n");
       fprintf(stderr, "GPIO cihazları bulunamadı!\n");
-      fprintf(stderr, "Çözüm:\n");
-      fprintf(stderr, "1. menuconfig'de GPIO driver etkin mi kontrol edin\n");
-      fprintf(stderr, "2. Board dosyasında GPIO pinleri tanımlı mı kontrol edin\n");
-      fprintf(stderr, "   (boards/arm/stm32/stm32f4discovery/src/stm32_gpio.c)\n");
       
       /* Açılanları kapat */
       for (i = 0; i < NUM_LEDS; i++)
@@ -175,7 +171,6 @@ int main(int argc, FAR char *argv[])
   /* LED pattern'ini göster */
   show_led_pattern(leds);
   
-  /* Temizlik (buraya hiç gelmeyecek ama yine de) */
   for (i = 0; i < NUM_LEDS; i++)
     {
       led_set(leds[i], false);
