@@ -1,0 +1,30 @@
+#
+# For a description of the syntax of this configuration file,
+# see the file kconfig-language.txt in the NuttX tools repository.
+#
+
+config EXAMPLES_LED_CONTROL
+	tristate "LED Control example"
+	default n
+	depends on DEV_GPIO
+	---help---
+		Enable the LED Control example for STM32F4Discovery
+
+if EXAMPLES_LED_CONTROL
+
+config EXAMPLES_LED_CONTROL_PROGNAME
+	string "Program name"
+	default "led_control"
+	---help---
+		This is the name of the program that will be used when the NSH ELF
+		program is installed.
+
+config EXAMPLES_LED_CONTROL_PRIORITY
+	int "LED Control task priority"
+	default 100
+
+config EXAMPLES_LED_CONTROL_STACKSIZE
+	int "LED Control stack size"
+	default DEFAULT_TASK_STACKSIZE
+
+endif

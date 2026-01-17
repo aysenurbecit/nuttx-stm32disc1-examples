@@ -1,0 +1,13 @@
+*.o
+*.a
+*.elf
+*.bin
+*.hex
+*.map
+.depend
+Make.dep
+.built
+*.swp
+*~
+.vscode/
+.DS_Store
